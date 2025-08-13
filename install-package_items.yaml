@@ -1,0 +1,14 @@
+---
+ - hosts: localhost
+   become: true
+   tasks:
+    - name: create users
+      user:
+       name: "{{ item }}"
+       home: /home/{{ item }}_new
+       comment: This is user {{ item }}
+       shell: /bin/bash
+      with_items:
+       - user8
+       - user9
+       - user10
