@@ -1,0 +1,11 @@
+---
+ - hosts: localhost
+   become: true
+   tasks:
+    - name: create user
+      user:
+       name: user1
+       uid: 1050
+       home: /home/user1-new
+       shell: /bin/bash
+       comment: First user
